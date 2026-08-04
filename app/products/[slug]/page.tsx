@@ -87,19 +87,19 @@ export default async function ProductPage({
 
             <div>
 
-              <span className="text-brand-green uppercase tracking-[0.25em] text-sm font-body">
+              <span className="text-primary uppercase tracking-[0.25em] text-sm font-body">
 
                 {product.category}
 
               </span>
 
-              <h1 className="mt-5 text-5xl lg:text-6xl font-display font-semibold text-brand-brown">
+              <h1 className="mt-5 text-5xl lg:text-6xl font-display font-semibold text-secondary">
 
                 {product.name}
 
               </h1>
 
-              <p className="mt-6 text-lg leading-8 text-brand-brown/70">
+              <p className="mt-6 text-lg leading-8 text-secondary/70">
 
                 {product.description}
 
@@ -107,15 +107,15 @@ export default async function ProductPage({
 
               <div className="mt-10 flex flex-wrap gap-3">
 
-                <span className="rounded-full bg-brand-green text-white px-5 py-3 text-sm">
+                <span className="rounded-full bg-primary text-white px-5 py-3 text-sm">
                   ✓ 100% Natural
                 </span>
 
-                <span className="rounded-full bg-brand-gold text-white px-5 py-3 text-sm">
+                <span className="rounded-full bg-accent text-white px-5 py-3 text-sm">
                   ✓ Made in Malawi
                 </span>
 
-                <span className="rounded-full bg-brand-brown text-white px-5 py-3 text-sm">
+                <span className="rounded-full bg-secondary text-white px-5 py-3 text-sm">
                   ✓ Premium Quality
                 </span>
 
@@ -123,7 +123,7 @@ export default async function ProductPage({
 
               <Link
                 href="/contact"
-                className="inline-block mt-10 bg-brand-green text-white px-8 py-4 rounded-full hover:opacity-90 transition"
+                className="inline-block mt-10 bg-primary text-white px-8 py-4 rounded-full hover:opacity-90 transition"
               >
                 Order Now
               </Link>
@@ -137,12 +137,12 @@ export default async function ProductPage({
 
       {/* DETAILS */}
 
-      <section className="bg-brand-cream py-24">
+      <section className="bg-surface py-24">
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-14">
 
           {/* Product Highlights */}
           <div>
-            <h2 className="text-3xl font-display font-semibold text-brand-brown">
+            <h2 className="text-3xl font-display font-semibold text-secondary">
               Why You'll Love It
             </h2>
 
@@ -152,11 +152,11 @@ export default async function ProductPage({
                   key={feature}
                   className="flex items-center gap-4"
                 >
-                  <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center">
-                    <FaCheckCircle className="text-brand-green" />
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <FaCheckCircle className="text-primary" />
                   </div>
 
-                  <span className="text-lg text-brand-brown">
+                  <span className="text-lg text-secondary">
                     {feature}
                   </span>
                 </div>
@@ -166,11 +166,11 @@ export default async function ProductPage({
 
           {/* Available Sizes */}
           <div>
-            <h2 className="text-3xl font-display font-semibold text-brand-brown">
+            <h2 className="text-3xl font-display font-semibold text-secondary">
               Available Sizes
             </h2>
 
-            <p className="mt-4 text-brand-brown/70 leading-relaxed">
+            <p className="mt-4 text-secondary/70 leading-relaxed">
               Available in convenient pack sizes to suit every occasion, whether
               you're enjoying it on the go, sharing with family, or stocking up at
               home.
@@ -180,10 +180,10 @@ export default async function ProductPage({
               {product.sizes.map((size) => (
                 <div
                   key={size}
-                  className="bg-brand-cream rounded-2xl px-8 py-5 flex items-center gap-3 border border-brand-brown/10"
+                  className="bg-surface rounded-2xl px-8 py-5 flex items-center gap-3 border border-secondary/10"
                 >
-                  <FaBox className="text-brand-green text-lg" />
-                  <span className="font-medium text-brand-brown">
+                  <FaBox className="text-primary text-lg" />
+                  <span className="font-medium text-secondary">
                     {size}
                   </span>
                 </div>
@@ -201,18 +201,18 @@ export default async function ProductPage({
 
           <div className="flex items-center justify-between mb-12">
             <div>
-              <span className="uppercase tracking-[0.25em] text-sm text-brand-green">
+              <span className="uppercase tracking-[0.25em] text-sm text-primary">
                 More Products
               </span>
 
-              <h2 className="mt-3 text-4xl font-display font-semibold text-brand-brown">
+              <h2 className="mt-3 text-4xl font-display font-semibold text-secondary">
                 You May Also Like
               </h2>
             </div>
 
             <Link
               href="/products"
-              className="hidden md:inline-flex items-center gap-2 text-brand-green font-medium hover:text-brand-brown transition"
+              className="hidden md:inline-flex items-center gap-2 text-primary font-medium hover:text-secondary transition"
             >
               View All Products
               <span aria-hidden>→</span>
@@ -236,7 +236,7 @@ export default async function ProductPage({
                   />
                 </div>
 
-                <h3 className="mt-6 text-xl md:text-2xl font-display font-semibold text-brand-brown transition group-hover:text-brand-green">
+                <h3 className="mt-6 text-xl md:text-2xl font-display font-semibold text-secondary transition group-hover:text-primary">
                   {item.name}
                 </h3>
               </Link>
@@ -247,7 +247,7 @@ export default async function ProductPage({
           <div className="mt-12 text-center md:hidden">
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 bg-brand-green text-white px-6 py-3 rounded-full hover:opacity-90 transition"
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:opacity-90 transition"
             >
               View All Products
               <span aria-hidden>→</span>

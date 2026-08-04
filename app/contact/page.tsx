@@ -5,6 +5,7 @@ import { useState } from "react";
 import PageHeader from "@/components/PageHeader";
 import { FaWhatsapp } from "react-icons/fa";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { site } from "@/data/site";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -47,12 +48,12 @@ export default function ContactPage() {
       />
 
       {/* CONTACT SECTION */}
-      <section className="py-24 bg-brand-cream">
+      <section className="py-24 bg-surface">
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
 
           {/* LEFT INFO */}
           <div>
-            <span className="inline-flex rounded-full bg-brand-brown/20 px-4 py-2 text-sm font-medium text-brand-brown">
+            <span className="inline-flex rounded-full bg-secondary/20 px-4 py-2 text-sm font-medium text-secondary">
               Get in touch
             </span>
 
@@ -63,23 +64,23 @@ export default function ContactPage() {
             <div className="mt-10 space-y-6">
 
               <div className="flex items-center gap-4">
-                <Phone className="text-brand-green" />
-                <span className="text-black/90">+265 993 266 432</span>
+                <Phone className="text-primary" />
+                <span className="text-black/90">{site.phone}</span>
               </div>
 
               <div className="flex items-center gap-4">
-                <Mail className="text-brand-green" />
-                <span className="text-black/90">info@tiatamw.com</span>
+                <Mail className="text-primary" />
+                <span className="text-black/90">{site.email}</span>
               </div>
 
               <div className="flex items-center gap-4">
-                <MapPin className="text-brand-green" />
-                <span className="text-black/90">Area 25 Lilongwe, Malawi</span>
+                <MapPin className="text-primary" />
+                <span className="text-black/90">{site.address}</span>
               </div>
 
               {/* WHATSAPP CTA */}
               <a
-                href="https://wa.me/265993266432"
+                href={`https://wa.me/${site.whatsapp}`}
                 target="_blank"
                 className="inline-flex items-center gap-2 mt-6 bg-green-500 text-white px-5 py-3 rounded-full hover:opacity-90 transition"
               >
@@ -93,11 +94,11 @@ export default function ContactPage() {
           {/* RIGHT FORM */}
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-2xl border border-brand-brown/30"
+            className="bg-white p-8 rounded-2xl border border-secondary/30"
           >
             <div className="space-y-5">
 
-              <h2 className="text-3xl py-5 font-bold text-brand-brown">
+              <h2 className="text-3xl py-5 font-bold text-secondary">
                 Send a Message
               </h2>
 
@@ -108,7 +109,7 @@ export default function ContactPage() {
                 value={form.name}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-xl border text-brand-brown border-brand-brown/50 focus:outline-none focus:border-brand-green"
+                className="w-full p-3 rounded-xl border text-secondary border-secondary/50 focus:outline-none focus:border-primary"
               />
 
               <input
@@ -118,7 +119,7 @@ export default function ContactPage() {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-xl border text-brand-brown border-brand-brown/50 focus:outline-none focus:border-brand-green"
+                className="w-full p-3 rounded-xl border text-secondary border-secondary/50 focus:outline-none focus:border-primary"
               />
 
               <textarea
@@ -128,13 +129,13 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full p-3 rounded-xl border text-brand-brown border-brand-brown/50 focus:outline-none focus:border-brand-green"
+                className="w-full p-3 rounded-xl border text-secondary border-secondary/50 focus:outline-none focus:border-primary"
               />
 
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full bg-brand-green text-white py-3 rounded-full font-medium hover:opacity-90 transition disabled:opacity-60"
+                className="w-full bg-primary text-white py-3 rounded-full font-medium hover:opacity-90 transition disabled:opacity-60"
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
               </button>

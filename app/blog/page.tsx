@@ -43,15 +43,15 @@ export default async function BlogPage({
 
             {/* Heading */}
             <div className="text-center max-w-3xl mx-auto">
-              <span className="inline-flex rounded-full bg-brand-gold/10 px-4 py-2 text-sm font-medium text-brand-gold">
+              <span className="inline-flex rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
                 Latest News
               </span>
 
-              <h1 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-brand-brown">
+              <h1 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-secondary">
                 Stories & Updates
               </h1>
 
-              <p className="mt-5 text-lg text-brand-brown/70 leading-relaxed">
+              <p className="mt-5 text-lg text-secondary/70 leading-relaxed">
                 Discover recipes, healthy living tips, company news, and
                 everything happening at Tiata Investment.
               </p>
@@ -59,7 +59,7 @@ export default async function BlogPage({
 
             {/* Blog Grid */}
             {blogPosts.length === 0 ? (
-              <p className="mt-16 text-center text-brand-brown/50">
+              <p className="mt-16 text-center text-secondary/50">
                 No posts published yet. Check back soon.
               </p>
             ) : (
@@ -69,7 +69,7 @@ export default async function BlogPage({
                     <Link
                       key={post.slug}
                       href={`/blog/${post.slug}`}
-                      className="group block overflow-hidden rounded-[2rem] border border-brand-brown/10 bg-brand-cream transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                      className="group block overflow-hidden rounded-[2rem] border border-secondary/10 bg-surface transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
                     >
                       {/* Image */}
                       <div className="relative h-64 overflow-hidden">
@@ -84,23 +84,23 @@ export default async function BlogPage({
                       {/* Content */}
                       <div className="p-8">
                         <div className="mb-5 flex items-center justify-between">
-                          <span className="rounded-full bg-brand-green/10 px-3 py-1 text-xs font-medium text-brand-green">
+                          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
                             {post.category}
                           </span>
-                          <span className="text-sm text-brand-brown/50">
+                          <span className="text-sm text-secondary/50">
                             {post.date}
                           </span>
                         </div>
 
-                        <h2 className="font-display text-2xl font-semibold leading-snug text-brand-brown transition-colors group-hover:text-brand-green">
+                        <h2 className="font-display text-2xl font-semibold leading-snug text-secondary transition-colors group-hover:text-primary">
                           {post.title}
                         </h2>
 
-                        <p className="mt-4 line-clamp-3 leading-relaxed text-brand-brown/70">
+                        <p className="mt-4 line-clamp-3 leading-relaxed text-secondary/70">
                           {post.excerpt}
                         </p>
 
-                        <div className="mt-8 inline-flex items-center gap-2 font-medium text-brand-green transition group-hover:text-brand-gold">
+                        <div className="mt-8 inline-flex items-center gap-2 font-medium text-primary transition group-hover:text-accent">
                           Read Article
                           <span>→</span>
                         </div>
@@ -119,14 +119,14 @@ export default async function BlogPage({
                     {safePage > 1 ? (
                       <Link
                         href={safePage - 1 === 1 ? "/blog" : `/blog?page=${safePage - 1}`}
-                        className="inline-flex items-center justify-center rounded-full border border-brand-brown/15 w-11 h-11 text-brand-brown transition hover:border-brand-green hover:text-brand-green"
+                        className="inline-flex items-center justify-center rounded-full border border-secondary/15 w-11 h-11 text-secondary transition hover:border-primary hover:text-primary"
                         aria-label="Previous page"
                       >
                         ←
                       </Link>
                     ) : (
                       <span
-                        className="inline-flex items-center justify-center rounded-full border border-brand-brown/10 w-11 h-11 text-brand-brown/30 cursor-not-allowed"
+                        className="inline-flex items-center justify-center rounded-full border border-secondary/10 w-11 h-11 text-secondary/30 cursor-not-allowed"
                         aria-hidden
                       >
                         ←
@@ -141,8 +141,8 @@ export default async function BlogPage({
                         aria-current={num === safePage ? "page" : undefined}
                         className={`inline-flex items-center justify-center rounded-full w-11 h-11 text-sm font-medium transition ${
                           num === safePage
-                            ? "bg-brand-green text-white"
-                            : "border border-brand-brown/15 text-brand-brown hover:border-brand-green hover:text-brand-green"
+                            ? "bg-primary text-white"
+                            : "border border-secondary/15 text-secondary hover:border-primary hover:text-primary"
                         }`}
                       >
                         {num}
@@ -153,14 +153,14 @@ export default async function BlogPage({
                     {safePage < totalPages ? (
                       <Link
                         href={`/blog?page=${safePage + 1}`}
-                        className="inline-flex items-center justify-center rounded-full border border-brand-brown/15 w-11 h-11 text-brand-brown transition hover:border-brand-green hover:text-brand-green"
+                        className="inline-flex items-center justify-center rounded-full border border-secondary/15 w-11 h-11 text-secondary transition hover:border-primary hover:text-primary"
                         aria-label="Next page"
                       >
                         →
                       </Link>
                     ) : (
                       <span
-                        className="inline-flex items-center justify-center rounded-full border border-brand-brown/10 w-11 h-11 text-brand-brown/30 cursor-not-allowed"
+                        className="inline-flex items-center justify-center rounded-full border border-secondary/10 w-11 h-11 text-secondary/30 cursor-not-allowed"
                         aria-hidden
                       >
                         →

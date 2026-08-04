@@ -1,35 +1,42 @@
 import type { Metadata } from "next";
-import { Roboto_Slab, Poppins } from "next/font/google";
+import { theme, getGoogleFontsUrl } from "@/data/theme";
+import { site } from "@/data/site";
 import "./globals.css";
 
-const fraunces = Roboto_Slab({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["500", "600", "700"],
-  display: "swap",
-});
-
-const workSans = Poppins({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tiatamw.com"),
+  metadataBase: new URL(site.website),
   title: {
-    default: "Tiata Investment | Real fruit, pressed close to where it grows",
-    template: "%s | Tiata Investment",
+    default: site.seo.title,
+    template: `%s | ${site.name}`,
   },
-  description:
-    "Tiata Investment turns mango, baobab, passion fruit, and guava from Malawian smallholder farms into juice on shelf within days of harvest.",
+  description: site.seo.description,
+  keywords: site.seo.keywords,
   openGraph: {
-    siteName: "Tiata Investment",
+    siteName: site.name,
     type: "website",
     locale: "en_MW",
   },
 };
+
+const rootCssVars = `
+  :root {
+    --primary: ${theme.colors.primary};
+    --secondary: ${theme.colors.secondary};
+    --accent: ${theme.colors.accent};
+    --surface: ${theme.colors.surface};
+
+    --background: ${theme.colors.background};
+    --foreground: ${theme.colors.foreground};
+    --muted: ${theme.colors.muted};
+
+    --font-display: "${theme.fonts.display.name}", ${theme.fonts.display.fallback};
+    --font-body: "${theme.fonts.body.name}", ${theme.fonts.body.fallback};
+
+    --radius-sm: ${theme.borderRadius.small};
+    --radius-md: ${theme.borderRadius.medium};
+    --radius-lg: ${theme.borderRadius.large};
+  }
+`;
 
 export default function RootLayout({
   children,
@@ -38,9 +45,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fraunces.variable} ${workSans.variable} font-body`}>
-        {children}
-      </body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link href={getGoogleFontsUrl()} rel="stylesheet" />
+        <style dangerouslySetInnerHTML={{ __html: rootCssVars }} />
+      </head>
+      <body className="font-body">{children}</body>
     </html>
   );
 }

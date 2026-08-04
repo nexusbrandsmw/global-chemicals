@@ -69,15 +69,15 @@ export default async function BlogPostPage({
         <section className="bg-white py-20">
           <div className="max-w-4xl mx-auto px-6">
 
-            <span className="inline-flex rounded-full bg-brand-green/10 px-4 py-2 text-sm font-medium text-brand-green">
+            <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
               {post.category}
             </span>
 
-            <h1 className="mt-6 text-5xl md:text-6xl font-display font-semibold text-brand-brown leading-tight">
+            <h1 className="mt-6 text-5xl md:text-6xl font-display font-semibold text-secondary leading-tight">
               {post.title}
             </h1>
 
-            <div className="mt-5 flex flex-wrap items-center gap-3 text-brand-brown/60 text-sm">
+            <div className="mt-5 flex flex-wrap items-center gap-3 text-secondary/60 text-sm">
               <span>{post.date}</span>
 
               {post.author && (
@@ -107,26 +107,26 @@ export default async function BlogPostPage({
                 max-w-none
 
                 prose-headings:font-display
-                prose-headings:text-brand-brown
+                prose-headings:text-secondary
 
                 prose-p:text-black
                 prose-p:leading-8
 
-                prose-strong:text-brand-brown
+                prose-strong:text-secondary
 
-                prose-a:text-brand-green
+                prose-a:text-primary
                 prose-a:no-underline
-                hover:prose-a:text-brand-gold
+                hover:prose-a:text-accent
 
-                prose-li:text-brand-brown
-                prose-ul:text-brand-brown
-                prose-ol:text-brand-brown
+                prose-li:text-secondary
+                prose-ul:text-secondary
+                prose-ol:text-secondary
 
                 prose-img:rounded-3xl
                 prose-img:shadow-lg
 
-                prose-blockquote:border-brand-green
-                prose-blockquote:text-brand-brown/70
+                prose-blockquote:border-primary
+                prose-blockquote:text-secondary/70
 
                 [&_*]:!bg-transparent
                 [&_p]:!text-black
@@ -143,14 +143,14 @@ export default async function BlogPostPage({
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <section className="bg-brand-cream py-20">
+          <section className="bg-surface py-20">
             <div className="max-w-4xl mx-auto px-6">
 
-              <h2 className="text-3xl font-display font-semibold text-brand-brown mb-8">
+              <h2 className="text-3xl font-display font-semibold text-secondary mb-8">
                 Related Articles
               </h2>
 
-              <div className="flex flex-col divide-y divide-brand-brown/10">
+              <div className="flex flex-col divide-y divide-secondary/10">
 
                 {relatedPosts.map((article) => (
                   <Link
@@ -158,7 +158,7 @@ export default async function BlogPostPage({
                     href={`/blog/${article.slug}`}
                     className="group py-5"
                   >
-                    <h3 className="text-xl font-display font-semibold text-brand-brown group-hover:text-brand-green transition">
+                    <h3 className="text-xl font-display font-semibold text-secondary group-hover:text-primary transition">
                       {article.title}
                     </h3>
                   </Link>

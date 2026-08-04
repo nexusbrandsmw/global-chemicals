@@ -58,9 +58,9 @@ const features = [
 
 const team = [
   {
-    name: "Temwa Munthali",
-    position: "Founder & Managing Director",
-    image: "/team-1.jpeg",
+    name: "John Banda",
+    position: "Managing Director",
+    image: "/team-1.jpg",
     bio: "Leading Tiata Investment with a vision to deliver quality food products that families across Malawi can trust.",
   },
   {
@@ -92,19 +92,19 @@ export default function AboutPage() {
         <section className="bg-white py-20 lg:py-28">
           <div className="max-w-6xl mx-auto px-6 text-center">
 
-            <span className="inline-flex rounded-full bg-brand-green/10 px-5 py-2 text-sm font-medium text-brand-green">
+            <span className="inline-flex rounded-full bg-primary/10 px-5 py-2 text-sm font-medium text-primary">
               About Tiata Investment
             </span>
 
-            <h1 className="mt-8 text-5xl md:text-6xl font-display font-semibold text-brand-brown leading-tight">
+            <h1 className="mt-8 text-5xl md:text-6xl font-display font-semibold text-secondary leading-tight">
               Proudly crafting
-              <span className="block text-brand-gold">
+              <span className="block text-accent">
                 quality food products
               </span>
               for every Malawian home.
             </h1>
 
-            <p className="mt-8 max-w-3xl mx-auto text-lg leading-relaxed text-brand-brown/70">
+            <p className="mt-8 max-w-3xl mx-auto text-lg leading-relaxed text-secondary/70">
               Tiata Investment is a proudly Malawian food processing company
               committed to producing delicious, natural and high-quality products.
               From refreshing fruit juices to everyday kitchen essentials,
@@ -114,7 +114,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-brand-cream py-24">
+        <section className="bg-surface py-24">
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
 
             <div className="relative">
@@ -130,25 +130,25 @@ export default function AboutPage() {
 
             <div>
 
-              <span className="text-brand-green uppercase tracking-[0.25em] text-sm font-semibold">
+              <span className="text-primary uppercase tracking-[0.25em] text-sm font-semibold">
                 Our Story
               </span>
 
-              <h2 className="mt-5 text-4xl md:text-5xl font-display font-semibold text-brand-brown">
+              <h2 className="mt-5 text-4xl md:text-5xl font-display font-semibold text-secondary">
                 Made with passion.
-                <span className="block text-brand-gold">
+                <span className="block text-accent">
                   Shared with pride.
                 </span>
               </h2>
 
-              <p className="mt-8 text-lg text-brand-brown/70 leading-relaxed">
+              <p className="mt-8 text-lg text-secondary/70 leading-relaxed">
                 Tiata Investment was founded with a simple vision: to produce
                 quality food products that Malawians can enjoy every day.
                 Every product reflects our commitment to freshness, consistency
                 and exceptional taste.
               </p>
 
-              <p className="mt-6 text-lg text-brand-brown/70 leading-relaxed">
+              <p className="mt-6 text-lg text-secondary/70 leading-relaxed">
                 We continue to grow our product range while maintaining
                 high production standards that deliver value,
                 convenience and confidence to every customer.
@@ -164,17 +164,17 @@ export default function AboutPage() {
 
             <div className="grid lg:grid-cols-2 gap-8">
 
-              <div className="rounded-[2rem] border border-brand-brown/10 p-10">
+              <div className="rounded-[2rem] border border-secondary/10 p-10">
 
-                <div className="w-16 h-16 rounded-2xl bg-brand-green/10 flex items-center justify-center text-brand-green text-3xl">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary text-3xl">
                   👁
                 </div>
 
-                <h3 className="mt-8 text-3xl font-display font-semibold text-brand-brown">
+                <h3 className="mt-8 text-3xl font-display font-semibold text-secondary">
                   Our Vision
                 </h3>
 
-                <p className="mt-5 text-brand-brown/70 leading-relaxed">
+                <p className="mt-5 text-secondary/70 leading-relaxed">
                   To become one of Malawi's leading manufacturers of
                   trusted food and beverage products recognised for
                   quality, innovation and customer satisfaction.
@@ -182,7 +182,7 @@ export default function AboutPage() {
 
               </div>
 
-              <div className="rounded-[2rem] bg-brand-green text-white p-10">
+              <div className="rounded-[2rem] bg-primary text-white p-10">
 
                 <div className="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center text-3xl">
                   🎯
@@ -206,17 +206,17 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-brand-cream py-24">
+        <section className="bg-surface py-24">
 
           <div className="max-w-6xl mx-auto px-6">
 
           <div className="text-center">
 
-          <h2 className="font-display text-5xl font-semibold text-brand-brown">
+          <h2 className="font-display text-5xl font-semibold text-secondary">
           Our Values
           </h2>
 
-          <p className="mt-5 text-brand-brown/70">
+          <p className="mt-5 text-secondary/70">
           The principles that guide everything we do.
           </p>
 
@@ -231,11 +231,11 @@ export default function AboutPage() {
           className="bg-white rounded-[2rem] p-8 text-center shadow-sm hover:shadow-xl transition"
           >
 
-          <h3 className="font-display text-2xl font-semibold text-brand-brown">
+          <h3 className="font-display text-2xl font-semibold text-secondary">
           {value.title}
           </h3>
 
-          <p className="mt-4 text-brand-brown/70">
+          <p className="mt-4 text-secondary/70">
           {value.desc}
           </p>
 
@@ -251,7 +251,7 @@ export default function AboutPage() {
 
 
           {/* WHY CHOOSE US */}
-          <section className="bg-brand-green py-24">
+          <section className="bg-primary py-24">
             <div className="max-w-7xl mx-auto px-6">
 
               <div className="text-center max-w-3xl mx-auto">
@@ -262,7 +262,7 @@ export default function AboutPage() {
 
                 <h2 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-white">
                   Quality You Can
-                  <span className="block text-brand-gold">
+                  <span className="block text-accent">
                     Trust Every Day
                   </span>
                 </h2>
@@ -277,17 +277,17 @@ export default function AboutPage() {
                     className="bg-white rounded-[2rem] p-8 text-center"
                   >
 
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-brand-green/10 flex items-center justify-center">
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
 
-                      <feature.icon className="text-3xl text-brand-green" />
+                      <feature.icon className="text-3xl text-primary" />
 
                     </div>
 
-                    <h3 className="mt-6 font-display text-2xl text-brand-brown font-semibold">
+                    <h3 className="mt-6 font-display text-2xl text-secondary font-semibold">
                       {feature.title}
                     </h3>
 
-                    <p className="mt-4 text-brand-brown/70 leading-relaxed">
+                    <p className="mt-4 text-secondary/70 leading-relaxed">
                       {feature.description}
                     </p>
 
@@ -306,18 +306,18 @@ export default function AboutPage() {
               {/* Heading */}
               <div className="text-center max-w-3xl mx-auto">
 
-                <span className="inline-flex rounded-full bg-brand-green/10 px-5 py-2 text-sm font-medium text-brand-green">
+                <span className="inline-flex rounded-full bg-primary/10 px-5 py-2 text-sm font-medium text-primary">
                   Meet Our Team
                 </span>
 
-                <h2 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-brand-brown">
+                <h2 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-secondary">
                   The People Behind
-                  <span className="block text-brand-gold">
+                  <span className="block text-accent">
                     Tiata Investment
                   </span>
                 </h2>
 
-                <p className="mt-6 text-lg text-brand-brown/70 leading-relaxed">
+                <p className="mt-6 text-lg text-secondary/70 leading-relaxed">
                   Behind every Tiata product is a dedicated team committed to quality,
                   innovation and delivering food products that customers can trust.
                 </p>
@@ -331,7 +331,7 @@ export default function AboutPage() {
 
                   <div
                     key={member.name}
-                    className="group rounded-[2rem] overflow-hidden border border-brand-brown/10 bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                    className="group rounded-[2rem] overflow-hidden border border-secondary/10 bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                   >
 
                     {/* Image */}
@@ -349,11 +349,11 @@ export default function AboutPage() {
                     {/* Content */}
                     <div className="p-8">
 
-                      <h3 className="font-display text-2xl font-semibold text-brand-brown">
+                      <h3 className="font-display text-2xl font-semibold text-secondary">
                         {member.name}
                       </h3>
 
-                      <p className="mt-2 text-brand-green font-semibold">
+                      <p className="mt-2 text-primary font-semibold">
                         {member.position}
                       </p>
 

@@ -1,33 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-
-  /* Tiata Investment brand palette */
-  --brand-brown: #4a3c30;
-  --brand-cream: #faf1e0;
-  --brand-gold: #fcb315;
-  --brand-green: #129447;
-}
+/*
+  No hardcoded values live here anymore.
+  --primary, --secondary, --accent, --surface,
+  --background, --foreground, --muted, --font-display, --font-body,
+  --radius-sm, --radius-md, --radius-lg
+  are all injected into :root at runtime by app/layout.tsx,
+  generated directly from data/theme.ts.
+*/
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 
-  --color-brand-brown: var(--brand-brown);
-  --color-brand-cream: var(--brand-cream);
-  --color-brand-gold: var(--brand-gold);
-  --color-brand-green: var(--brand-green);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
 }
 
 body {
@@ -35,6 +32,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
+
+/* ---------- Animations ---------- */
 
 @keyframes marquee {
   from {
@@ -62,11 +61,13 @@ body {
   animation: marquee-reverse 30s linear infinite;
 }
 
+/* ---------- Utilities ---------- */
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-

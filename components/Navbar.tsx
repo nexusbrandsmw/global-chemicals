@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { FaPhone, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/data/site";
 
 const links = [
   { href: "/", label: "Home" },
@@ -24,17 +25,17 @@ export default function Navbar() {
     <header className="w-full sticky top-0 z-50">
 
       {/* TOP BAR */}
-      <div className="hidden md:block bg-brand-brown text-white text-xs">
+      <div className="hidden md:block bg-secondary text-white text-xs">
         <div className="max-w-6xl mx-auto px-6 py-2 flex justify-between items-center">
 
           <div className="flex items-center gap-2 text-white/80">
             <FaEnvelope className="text-white" />
-            <span>info@tiatamw.com</span>
+            <span>{site.email}</span>
           </div>
 
           <div className="flex items-center gap-2 text-white/80">
             <FaPhone className="text-white" />
-            <span>+265 993 266 432</span>
+            <span>{site.phone}</span>
           </div>
 
         </div>
@@ -47,8 +48,8 @@ export default function Navbar() {
           {/* LOGO */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
-              alt="Tiata Investment"
+              src={site.logo}
+              alt={site.name}
               width={120}
               height={40}
               priority
@@ -56,7 +57,7 @@ export default function Navbar() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <ul className="hidden md:flex items-center gap-10 text-sm font-medium text-brand-brown">
+          <ul className="hidden md:flex items-center gap-10 text-sm font-medium text-secondary">
 
             {links.map((link) => (
               <li key={link.href}>
@@ -64,13 +65,13 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative pb-1 transition ${
                     isActive(link.href)
-                      ? "text-brand-gold"
-                      : "hover:text-brand-gold"
+                      ? "text-accent"
+                      : "hover:text-accent"
                   }`}
                 >
                   {link.label}
                   {isActive(link.href) && (
-                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-brand-gold rounded-full" />
+                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-accent rounded-full" />
                   )}
                 </Link>
               </li>
@@ -81,7 +82,7 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="/partner"
-            className="hidden md:block bg-brand-green text-white px-5 py-2 rounded-full text-sm hover:opacity-90 transition"
+            className="hidden md:block bg-primary text-white px-5 py-2 rounded-full text-sm hover:opacity-90 transition"
           >
             Order in Bulk
             <span className="transition-transform group-hover:translate-x-1"> → </span>
@@ -89,7 +90,7 @@ export default function Navbar() {
 
           {/* MOBILE MENU BUTTON */}
           <button
-            className="md:hidden text-2xl text-brand-brown"
+            className="md:hidden text-2xl text-secondary"
             onClick={() => setOpen(!open)}
           >
             {open ? <FaTimes /> : <FaBars />}
@@ -101,7 +102,7 @@ export default function Navbar() {
         {open && (
           <div className="md:hidden bg-white border-t">
 
-            <ul className="flex flex-col p-4 gap-4 text-brand-brown">
+            <ul className="flex flex-col p-4 gap-4 text-secondary">
 
               {links.map((link) => (
                 <li key={link.href}>
@@ -115,7 +116,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className="bg-brand-gold text-white px-4 py-2 rounded-full inline-block"
+                  className="bg-accent text-white px-4 py-2 rounded-full inline-block"
                 >
                   Order in Bulk
                   <span className="transition-transform group-hover:translate-x-1"> → </span>

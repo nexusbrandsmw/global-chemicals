@@ -9,6 +9,7 @@ import {
   FaLinkedinIn,
   FaTiktok,
 } from "react-icons/fa6";
+import { site, getCopyrightText } from "@/data/site";
 
 export default function Footer() {
   const ref = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-brand-brown text-white">
+    <footer className="bg-secondary text-white">
       <div
         ref={ref}
         className={`max-w-6xl mx-auto px-6 py-12 transition-all duration-700 ease-out ${
@@ -48,55 +49,55 @@ export default function Footer() {
 
           {/* ABOUT */}
           <div>
-            <h3 className="mb-4 text-xl font-bold text-brand-gold">
-              Tiata Investment
+            <h3 className="mb-4 text-xl font-bold text-accent">
+              {site.footerTitle}
             </h3>
             <p className="leading-relaxed text-white/80">
-              Tiata Investment is a proudly Malawian food processing company committed to producing delicious, natural and high-quality products.
+              {site.footerDescription}
             </p>
           </div>
 
           {/* QUICK LINKS */}
           <div>
-            <h3 className="mb-4 text-xl font-bold text-brand-gold">
+            <h3 className="mb-4 text-xl font-bold text-accent">
               Quick Links
             </h3>
 
             <ul className="space-y-3">
-              <li><Link href="/" className="hover:text-brand-gold text-white/80">Home</Link></li>
-              <li><Link href="/about" className="hover:text-brand-gold text-white/80">About</Link></li>
-              <li><Link href="/products" className="hover:text-brand-gold text-white/80">Products</Link></li>
-              <li><Link href="/blog" className="hover:text-brand-gold text-white/80">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-brand-gold text-white/80">Contact</Link></li>
+              <li><Link href="/" className="hover:text-accent text-white/80">Home</Link></li>
+              <li><Link href="/about" className="hover:text-accent text-white/80">About</Link></li>
+              <li><Link href="/products" className="hover:text-accent text-white/80">Products</Link></li>
+              <li><Link href="/blog" className="hover:text-accent text-white/80">Blog</Link></li>
+              <li><Link href="/contact" className="hover:text-accent text-white/80">Contact</Link></li>
             </ul>
           </div>
 
           {/* CONTACT */}
           <div>
-            <h3 className="mb-4 text-xl font-bold text-brand-gold">
+            <h3 className="mb-4 text-xl font-bold text-accent">
               Contact Us
             </h3>
 
             <div className="space-y-4">
 
               <div className="flex gap-3">
-                <Phone className="text-brand-gold mt-1" size={20} />
-                <a href="tel:+265991234567" className="text-white/80 hover:text-brand-gold">
-                  +265 993 266 432
+                <Phone className="text-accent mt-1" size={20} />
+                <a href={`tel:${site.phone}`} className="text-white/80 hover:text-accent">
+                  {site.phone}
                 </a>
               </div>
 
               <div className="flex gap-3">
-                <Mail className="text-brand-gold mt-1" size={20} />
-                <a href="mailto:hello@tiatainvestment.mw" className="text-white/80 hover:text-brand-gold">
-                  info@tiatamw.com
+                <Mail className="text-accent mt-1" size={20} />
+                <a href={`mailto:${site.email}`} className="text-white/80 hover:text-accent">
+                  {site.email}
                 </a>
               </div>
 
               <div className="flex gap-3">
-                <MapPin className="text-brand-gold mt-1" size={20} />
+                <MapPin className="text-accent mt-1" size={20} />
                 <span className="text-white/80">
-                  Area 25 Lilongwe, Malawi
+                  {site.address}
                 </span>
               </div>
 
@@ -104,17 +105,29 @@ export default function Footer() {
 
             {/* SOCIAL */}
             <div className="pt-6 flex gap-4">
-              <a href="https://web.facebook.com/profile.php?id=61565642885490" target="_blank" rel="noreferrer">
-                <FaFacebookF className="hover:text-brand-gold cursor-pointer" />
-              </a>
+              {site.social.facebook && (
+                <a href={site.social.facebook} target="_blank" rel="noreferrer">
+                  <FaFacebookF className="hover:text-accent cursor-pointer" />
+                </a>
+              )}
 
-              <a href="https://www.instagram.com/tiata_investment/" target="_blank" rel="noreferrer">
-                <FaInstagram className="hover:text-brand-gold cursor-pointer" />
-              </a>
+              {site.social.instagram && (
+                <a href={site.social.instagram} target="_blank" rel="noreferrer">
+                  <FaInstagram className="hover:text-accent cursor-pointer" />
+                </a>
+              )}
 
-              <a href="https://www.linkedin.com/company/107577742/" target="_blank" rel="noreferrer">
-                <FaLinkedinIn className="hover:text-brand-gold cursor-pointer" />
-              </a>
+              {site.social.linkedin && (
+                <a href={site.social.linkedin} target="_blank" rel="noreferrer">
+                  <FaLinkedinIn className="hover:text-accent cursor-pointer" />
+                </a>
+              )}
+
+              {site.social.tiktok && (
+                <a href={site.social.tiktok} target="_blank" rel="noreferrer">
+                  <FaTiktok className="hover:text-accent cursor-pointer" />
+                </a>
+              )}
             </div>
           </div>
 
@@ -123,18 +136,18 @@ export default function Footer() {
         {/* BOTTOM */}
         <div className="mt-10 border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
           <div>
-            © {new Date().getFullYear()} Tiata Investment. All rights reserved.
+            {getCopyrightText()}
           </div>
 
           <div>
-            Developed by{" "}
+            {site.copyright.developer.label}{" "}
             <a
-              href="https://nexusbrandmw.com"
+              href={site.copyright.developer.website}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-primary transition-colors underline"
             >
-              Nexus Brands
+              {site.copyright.developer.name}
             </a>
           </div>
         </div>
