@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import {
   FaFacebookF,
@@ -10,6 +9,20 @@ import {
   FaTiktok,
 } from "react-icons/fa6";
 import { site, getCopyrightText } from "@/data/site";
+
+const services = [
+  "Fumigation Services",
+  "Pest & Termite Control",
+  "Veterinary Services",
+  "Environmental Disinfection",
+];
+
+const products = [
+  "Insecticides",
+  "Fertilizers",
+  "Seeds",
+  "Garden Tools & Protective Wear",
+];
 
 export default function Footer() {
   const ref = useRef<HTMLDivElement>(null);
@@ -45,30 +58,30 @@ export default function Footer() {
             : "opacity-0 translate-y-16"
         }`}
       >
-        <div className="grid gap-10 md:grid-cols-3">
-
-          {/* ABOUT */}
+        <div className="grid gap-10 sm:grid-cols-3">
+          {/* SERVICES */}
           <div>
             <h3 className="mb-4 text-xl font-bold text-accent">
-              {site.footerTitle}
-            </h3>
-            <p className="leading-relaxed text-white/80">
-              {site.footerDescription}
-            </p>
-          </div>
-
-          {/* QUICK LINKS */}
-          <div>
-            <h3 className="mb-4 text-xl font-bold text-accent">
-              Quick Links
+              Services
             </h3>
 
             <ul className="space-y-3">
-              <li><Link href="/" className="hover:text-accent text-white/80">Home</Link></li>
-              <li><Link href="/about" className="hover:text-accent text-white/80">About</Link></li>
-              <li><Link href="/products" className="hover:text-accent text-white/80">Products</Link></li>
-              <li><Link href="/blog" className="hover:text-accent text-white/80">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-accent text-white/80">Contact</Link></li>
+              {services.map((s) => (
+                <li key={s} className="text-white/80">{s}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* PRODUCTS */}
+          <div>
+            <h3 className="mb-4 text-xl font-bold text-accent">
+              Products
+            </h3>
+
+            <ul className="space-y-3">
+              {products.map((p) => (
+                <li key={p} className="text-white/80">{p}</li>
+              ))}
             </ul>
           </div>
 
@@ -79,28 +92,26 @@ export default function Footer() {
             </h3>
 
             <div className="space-y-4">
-
               <div className="flex gap-3">
-                <Phone className="text-accent mt-1" size={20} />
+                <Phone className="text-accent mt-1 shrink-0" size={20} />
                 <a href={`tel:${site.phone}`} className="text-white/80 hover:text-accent">
                   {site.phone}
                 </a>
               </div>
 
               <div className="flex gap-3">
-                <Mail className="text-accent mt-1" size={20} />
+                <Mail className="text-accent mt-1 shrink-0" size={20} />
                 <a href={`mailto:${site.email}`} className="text-white/80 hover:text-accent">
                   {site.email}
                 </a>
               </div>
 
               <div className="flex gap-3">
-                <MapPin className="text-accent mt-1" size={20} />
+                <MapPin className="text-accent mt-1 shrink-0" size={20} />
                 <span className="text-white/80">
                   {site.address}
                 </span>
               </div>
-
             </div>
 
             {/* SOCIAL */}
@@ -130,14 +141,11 @@ export default function Footer() {
               )}
             </div>
           </div>
-
         </div>
 
         {/* BOTTOM */}
         <div className="mt-10 border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
-          <div>
-            {getCopyrightText()}
-          </div>
+          <div>{getCopyrightText()}</div>
 
           <div>
             {site.copyright.developer.label}{" "}

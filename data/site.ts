@@ -7,40 +7,44 @@
 
 export const site = {
   // Company Information
-  name: "NodeJs Template",
-  shortName: "Template",
-  slogan: "Reusable website template",
+  name: "Global Chemicals",
+  shortName: "Global Chemicals",
+  slogan:
+    "Sellers and suppliers of quality agricultural products, tools, equipment, pest control, veterinary services and drugs.",
   description:
-    "This is a big step in my website development projects journey",
+    "Global Chemicals supplies agricultural inputs, tools and equipment, and provides fumigation, pest control and veterinary services to farms, institutions and businesses across Malawi.",
 
   // Branding
   logo: "/logo.png",
   favicon: "/favicon.ico",
 
   // Contact Information
-  email: "info@template.com",
-  phone: "+265 99X XXX XXX",
+  email: "info@globalchemicalsmw.com",
+  phone: "+265 999 724 962",
   // Digits only, no spaces or +, for building wa.me links
-  whatsapp: "26599XXXXXXXX",
-  address: "Area 25 Lilongwe, Malawi",
+  whatsapp: "265999724962",
+  address: "Kampala House, Kamuzu Procession Road, Lilongwe, Malawi",
 
   // Website
-  website: "https://tiatamw.com",
+  // TODO: confirm their actual domain — not stated in the company profile.
+  website: "https://globalchemicalsmw.com",
 
   // Social Media
+  // TODO: confirm Global Chemicals' actual handles — not stated in the
+  // company profile. These are unset rather than guessed.
   social: {
-    facebook: "https://web.facebook.com/profile.php?id=61565642885490",
-    instagram: "https://www.instagram.com/tiata_investment/",
-    linkedin: "https://www.linkedin.com/company/107577742/",
+    facebook: "",
+    instagram: "",
+    linkedin: "",
     x: "",
     youtube: "",
     tiktok: "",
   },
 
   // Footer
-  footerTitle: "Template",
+  footerTitle: "Global Chemicals",
   footerDescription:
-    "This is a big step in my website development projects journey",
+    "Quality agricultural products, tools and equipment, pest control, veterinary services and drugs — from our branches in Lilongwe, Malangalanga and Mitundu.",
 
   // Copyright
   copyright: {
@@ -53,15 +57,16 @@ export const site = {
 
   // SEO Defaults
   seo: {
-    title: "Tiata Investment | Real fruit, pressed close to where it grows",
+    title: "Global Chemicals | Agricultural Inputs, Pest Control & Veterinary Supply",
     description:
-      "Tiata Investment turns mango, baobab, passion fruit, and guava from Malawian smallholder farms into juice on shelf within days of harvest.",
+      "Global Chemicals sells and supplies agricultural products, tools, equipment, fumigation and pest control services, and veterinary services and drugs across Malawi.",
     keywords: [
-      "Tiata Investment",
-      "Malawian juice",
-      "mango juice Malawi",
-      "natural fruit juice",
-      "kitchen essentials Malawi",
+      "Global Chemicals",
+      "agricultural inputs Malawi",
+      "pest control Lilongwe",
+      "fumigation services Malawi",
+      "veterinary supplies Malawi",
+      "agrochemicals Malawi",
     ],
     ogImage: "/og-image.jpg",
   },

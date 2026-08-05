@@ -23,90 +23,81 @@ export default function Navbar() {
 
   return (
     <header className="w-full sticky top-0 z-50">
-
       {/* TOP BAR */}
-      <div className="hidden md:block bg-secondary text-white text-xs">
+      <div className="hidden md:block bg-primary text-white text-xs">
         <div className="max-w-6xl mx-auto px-6 py-2 flex justify-between items-center">
-
-          <div className="flex items-center gap-2 text-white/80">
+          <div className="flex items-center gap-2 text-white">
             <FaEnvelope className="text-white" />
             <span>{site.email}</span>
           </div>
 
-          <div className="flex items-center gap-2 text-white/80">
+          <div className="flex items-center gap-2 text-white">
             <FaPhone className="text-white" />
             <span>{site.phone}</span>
           </div>
-
         </div>
       </div>
 
-      {/* MAIN NAV */}
-      <nav className="backdrop-blur-md bg-white">
+      <nav className="bg-white border-b border-primary/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
           {/* LOGO */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src={site.logo}
-              alt={site.name}
-              width={120}
-              height={40}
-              priority
-            />
+          <Link href="/" className="flex items-center shrink-0">
+            <Image src={site.logo} alt={site.name} width={120} height={40} priority />
           </Link>
 
-          {/* DESKTOP NAV */}
-          <ul className="hidden md:flex items-center gap-10 text-sm font-medium text-secondary">
+          {/* NAV — links and CTA share one pill container, right-aligned */}
+          <div className="hidden md:flex items-center gap-1 rounded-full bg-primary/10 p-1.5 text-sm font-medium text-white ml-auto">
+            <ul className="flex items-center gap-1">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`block rounded-full px-5 py-2 transition ${
+                      isActive(link.href)
+                        ? "bg-primary/80 text-white font-semibold"
+                        : "text-secondary hover:bg-primary/20 hover:text-primary"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`relative pb-1 transition ${
-                    isActive(link.href)
-                      ? "text-accent"
-                      : "hover:text-accent"
-                  }`}
-                >
-                  {link.label}
-                  {isActive(link.href) && (
-                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-accent rounded-full" />
-                  )}
-                </Link>
-              </li>
-            ))}
-
-          </ul>
-
-          {/* CTA */}
-          <Link
-            href="/partner"
-            className="hidden md:block bg-primary text-white px-5 py-2 rounded-full text-sm hover:opacity-90 transition"
-          >
-            Order in Bulk
-            <span className="transition-transform group-hover:translate-x-1"> → </span>
-          </Link>
+            <Link
+              href="/partner"
+              className="inline-flex items-center gap-1 bg-accent text-secondary font-bold px-5 py-2 rounded-full transition hover:opacity-90"
+            >
+              Request a Quote
+              <span aria-hidden> →</span>
+            </Link>
+          </div>
 
           {/* MOBILE MENU BUTTON */}
           <button
-            className="md:hidden text-2xl text-secondary"
+            className="md:hidden text-2xl text-white"
             onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
           >
             {open ? <FaTimes /> : <FaBars />}
           </button>
-
         </div>
 
         {/* MOBILE MENU */}
         {open && (
-          <div className="md:hidden bg-white border-t">
-
-            <ul className="flex flex-col p-4 gap-4 text-secondary">
-
+          <div className="md:hidden bg-primary border-t border-white/10">
+            <ul className="flex flex-col p-4 gap-2 text-white">
               {links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} onClick={() => setOpen(false)}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`block rounded-full px-5 py-2.5 text-sm font-medium transition ${
+                      isActive(link.href)
+                        ? "bg-accent text-primary font-semibold"
+                        : "text-white/85 hover:bg-white/10"
+                    }`}
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -116,18 +107,15 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className="bg-accent text-white px-4 py-2 rounded-full inline-block"
+                  className="mt-2 bg-accent text-primary font-bold px-5 py-2.5 rounded-full inline-block text-sm"
                 >
-                  Order in Bulk
-                  <span className="transition-transform group-hover:translate-x-1"> → </span>
+                  Request a Quote
+                  <span aria-hidden> →</span>
                 </Link>
               </li>
-
             </ul>
-
           </div>
         )}
-
       </nav>
     </header>
   );

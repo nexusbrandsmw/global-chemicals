@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaCheck, FaStar, FaLeaf, FaSeedling, FaTruck, FaAward, FaShieldAlt, FaHeart, } from "react-icons/fa";
 import { products } from "@/data/products";
 import { getAllPosts } from "@/lib/wordpress";
+import { site } from "@/data/site";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -63,69 +64,55 @@ export default async function Home() {
     <>
       <Navbar />
 
-      {/* ── HERO ──────────────────────────────────────────────── */}
-      <section className="bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-brand-cream/40 rounded-[2.5rem] overflow-hidden">
-            <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+      {/* ── HERO ────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden min-h-[640px] flex items-center text-white">
+        {/* background photo — add the real field/tractor/spraying shot
+            at public/hero-farm.jpg (or update the src below) */}
+        <Image
+          src="/hero-farm.jpg"
+          alt="Global Chemicals agricultural field"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/70 to-secondary/20" aria-hidden />
 
-              <div>
-                <span className="inline-flex items-center gap-2 bg-brand-gold text-white text-sm font-medium px-4 py-2 rounded-full shadow-sm">
-                  100% Real Malawian Products
+        <div className="relative max-w-6xl mx-auto px-6 py-24 w-full">
+          <div className="max-w-xl">
+            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase rounded-full px-4 py-2 bg-white/10 border border-white/15 text-accent">
+              Sellers &amp; Suppliers of Quality Agricultural Products
+            </span>
+
+            <h1 className="mt-6 font-display font-bold leading-[1.05] text-4xl md:text-5xl lg:text-6xl">
+              Agricultural Inputs
+              <br />
+              &amp; Pest Control
+            </h1>
+
+            <p className="mt-6 text-white/75 text-base leading-relaxed max-w-md">
+              {site.description}
+            </p>
+
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link
+                href="/product"
+                className="inline-flex items-center gap-3 rounded-full bg-primary text-white pl-6 pr-2 py-2 text-sm font-semibold hover:opacity-90 transition"
+              >
+                See All Products
+                <span className="flex items-center justify-center w-8 h-8 text-white" aria-hidden>
+                  →
                 </span>
+              </Link>
 
-                <h1 className="mt-8 font-display font-semibold leading-[1.05] text-brand-brown">
-                  <span className="block text-5xl md:text-7xl">
-                    Naturally Delicious.
-                  </span>
-                  <span className="block text-5xl md:text-7xl text-brand-green">
-                    Proudly Malawian.
-                  </span>
-                </h1>
-
-                <p className="mt-6 text-brand-brown/70 text-lg leading-relaxed max-w-md">
-                  Discover Tiata's range of premium juices and kitchen products,
-                  carefully crafted from quality natural ingredients to bring
-                  fresh taste and trusted quality to every home.
-                </p>
-
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/products"
-                    className="bg-brand-green text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition text-center"
-                  >
-                    Shop Now
-                  </Link>
-                  <Link
-                    href="/partner"
-                    className="flex items-center justify-center gap-2 text-brand-brown px-8 py-4 font-medium border border-brand-brown rounded-full hover:text-brand-gold hover:border-brand-gold transition text-center"
-                  >
-                    Partner
-                    <span aria-hidden>→</span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* product shot */}
-              <div className="relative">
-                <div className="relative w-full aspect-square">
-                  <Image src="/hero-bottle.png" alt="Bottle of Tiata juice" fill className="object-contain drop-shadow-2xl" priority />
-                </div>
-
-                <div className="absolute top-4 left-0 sm:-left-6 bg-brand-brown rounded-full shadow-lg px-5 py-4 flex items-center gap-3 max-w-[180px]">
-                  <p className="text-sm font-medium text-brand-cream leading-snug">✓ 100% Natural</p>
-                </div>
-                <div className="absolute top-10 right-0 sm:-right-4 bg-brand-green rounded-full shadow-lg px-5 py-4 flex items-center gap-3 max-w-[170px]">
-                  <p className="text-sm font-medium text-brand-cream leading-snug">✓ Malawian</p>
-                </div>
-                <div className="absolute bottom-10 left-0 sm:-left-4 bg-brand-gold rounded-full shadow-lg px-5 py-4 max-w-[160px]">
-                  <p className="text-sm text-white leading-snug">✓ Top Quality</p>
-                </div>
-                <div className="absolute bottom-6 right-0 sm:-right-6 bg-white rounded-full border-brand-brown shadow-lg px-5 py-4 max-w-[170px]">
-                  <p className="text-sm text-brand-brown leading-snug">✓ 5+ Products</p>
-                </div>
-              </div>
-
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-3 rounded-full border border-white/30 text-white pl-6 pr-2 py-2 text-sm font-semibold hover:bg-white/10 transition"
+              >
+                See All Services
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/15 text-white" aria-hidden>
+                  →
+                </span>
+              </Link>
             </div>
           </div>
         </div>
@@ -164,7 +151,7 @@ export default async function Home() {
 
       {/* ── OUR PRODUCT RANGE ─────────────────────────────────── */}
       <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
 
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-flex items-center rounded-full bg-brand-gold/10 px-4 py-2 text-sm font-medium text-brand-gold">
@@ -207,7 +194,7 @@ export default async function Home() {
 
       {/* ── FROM OUR JOURNAL — WordPress posts ────────────────── */}
       <section className="bg-brand-cream py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div className="max-w-2xl">
