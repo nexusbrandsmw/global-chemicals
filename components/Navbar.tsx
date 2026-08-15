@@ -78,7 +78,7 @@ export default function Navbar() {
 
           {/* MOBILE MENU BUTTON */}
           <button
-            className="md:hidden text-2xl text-white"
+            className="md:hidden text-2xl text-secondary"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -88,7 +88,7 @@ export default function Navbar() {
 
         {/* MOBILE MENU */}
         {open && (
-          <div className="md:hidden bg-primary border-t border-white/10">
+          <div className="md:hidden bg-white border-t border-white/10">
             <ul className="flex flex-col p-4 gap-2 text-white">
               {links.map((link) => (
                 <li key={link.href}>
@@ -97,7 +97,7 @@ export default function Navbar() {
                     onClick={() => setOpen(false)}
                     className={`block rounded-full px-5 py-2.5 text-sm font-medium transition ${
                       isActive(link.href)
-                        ? "bg-accent text-primary font-semibold"
+                        ? "bg-white text-secondary font-semibold"
                         : "text-white/85 hover:bg-white/10"
                     }`}
                   >
@@ -112,7 +112,7 @@ export default function Navbar() {
                     setOpen(false);
                     openQuoteModal();
                   }}
-                  className="mt-2 w-full text-left bg-accent text-primary font-bold px-5 py-2.5 rounded-full inline-block text-sm"
+                  className="mt-2 w-full text-left bg-accent text-secondary font-bold px-5 py-2.5 rounded-full inline-block text-sm"
                 >
                   Request a Quote
                   <span aria-hidden> →</span>
