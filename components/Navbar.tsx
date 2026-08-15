@@ -88,8 +88,8 @@ export default function Navbar() {
 
         {/* MOBILE MENU */}
         {open && (
-          <div className="md:hidden bg-white border-t border-white/10">
-            <ul className="flex flex-col p-4 gap-2 text-white">
+          <div className="md:hidden bg-white border-t border-secondary/10">
+            <ul className="flex flex-col p-4 gap-2 text-secondary">
               {links.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -97,7 +97,7 @@ export default function Navbar() {
                     onClick={() => setOpen(false)}
                     className={`block rounded-full px-5 py-2.5 text-sm font-medium transition ${
                       isActive(link.href)
-                        ? "bg-white text-secondary font-semibold"
+                        ? "bg-primary text-secondary font-semibold"
                         : "text-white/85 hover:bg-white/10"
                     }`}
                   >
