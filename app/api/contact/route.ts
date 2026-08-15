@@ -1,9 +1,9 @@
-import { Resend } from "resend";
+// import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { site } from "@/data/site";
 import { theme } from "@/data/theme";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -19,6 +19,11 @@ export async function POST(request: Request) {
     const domain = new URL(site.website).hostname;
     const { secondary, surface } = theme.colors;
 
+    // Email sending disabled for now — logging instead so submissions
+    // aren't silently lost while Resend isn't configured.
+    console.log("Contact form submission (not sent):", { name, email, message });
+
+    /*
     await resend.emails.send({
       from: `${site.name} Contact Form <contact@${domain}>`,
       to: site.email,
@@ -41,6 +46,7 @@ export async function POST(request: Request) {
         </div>
       `,
     });
+    */
 
     return NextResponse.json({ success: true });
   } catch (error) {
