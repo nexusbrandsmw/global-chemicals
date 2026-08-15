@@ -95,7 +95,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className={`block rounded-full px-5 py-2.5 text-sm font-medium transition ${
+                    className={`block rounded-full px-5 py-2.5 text-sm text-primary font-medium transition ${
                       isActive(link.href)
                         ? "bg-primary text-secondary font-semibold"
                         : "text-white/85 hover:bg-white/10"
