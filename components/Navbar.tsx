@@ -6,11 +6,13 @@ import { FaPhone, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
+import { useQuoteModal } from "@/components/QuoteModalProvider";
 
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
+  { href: "/services", label: "Services" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
@@ -18,6 +20,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { openQuoteModal } = useQuoteModal();
 
   const isActive = (path: string) => pathname === path;
 
@@ -38,7 +41,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className="bg-white border-b border-primary/10">
+      <nav className="bg-white border-b border-primary/50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* LOGO */}
           <Link href="/" className="flex items-center shrink-0">
@@ -64,13 +67,13 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <Link
-              href="/partner"
+            <button
+              onClick={openQuoteModal}
               className="inline-flex items-center gap-1 bg-accent text-secondary font-bold px-5 py-2 rounded-full transition hover:opacity-90"
             >
               Request a Quote
               <span aria-hidden> →</span>
-            </Link>
+            </button>
           </div>
 
           {/* MOBILE MENU BUTTON */}
@@ -104,14 +107,16 @@ export default function Navbar() {
               ))}
 
               <li>
-                <Link
-                  href="/contact"
-                  onClick={() => setOpen(false)}
-                  className="mt-2 bg-accent text-primary font-bold px-5 py-2.5 rounded-full inline-block text-sm"
+                <button
+                  onClick={() => {
+                    setOpen(false);
+                    openQuoteModal();
+                  }}
+                  className="mt-2 w-full text-left bg-accent text-primary font-bold px-5 py-2.5 rounded-full inline-block text-sm"
                 >
                   Request a Quote
                   <span aria-hidden> →</span>
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

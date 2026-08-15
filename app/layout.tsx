@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { theme, getGoogleFontsUrl } from "@/data/theme";
 import { site } from "@/data/site";
+import QuoteModalProvider from "@/components/QuoteModalProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -55,7 +56,9 @@ export default function RootLayout({
         <link href={getGoogleFontsUrl()} rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: rootCssVars }} />
       </head>
-      <body className="font-body">{children}</body>
+      <body className="font-body">
+        <QuoteModalProvider>{children}</QuoteModalProvider>
+      </body>
     </html>
   );
 }

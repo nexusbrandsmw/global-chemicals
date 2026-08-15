@@ -1,86 +1,46 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { FaLeaf, FaAward, FaFlag, FaHeart } from "react-icons/fa";
+import QuoteButton from "@/components/QuoteButton";
+import { site } from "@/data/site";
+import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
 import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Tiata Investment is a proudly Malawian food processing company producing natural fruit juices and kitchen essentials families across Malawi can trust.",
+    "Global Chemicals is a Malawian seller and supplier of agricultural products, tools, equipment, pest control, veterinary services and drugs.",
 };
 
-const values = [
-  {
-    title: "Quality",
-    desc: "Every product is carefully prepared to meet high standards."
-  },
-  {
-    title: "Integrity",
-    desc: "We operate with honesty, transparency and accountability."
-  },
-  {
-    title: "Innovation",
-    desc: "We continuously improve our products and processes."
-  },
-  {
-    title: "Customer Focus",
-    desc: "Everything we do starts with our customers."
-  }
-];
-
-const features = [
-  {
-    icon: FaLeaf,
-    title: "100% Natural",
-    description:
-      "Our products are made using carefully selected natural ingredients for authentic taste and quality.",
-  },
-  {
-    icon: FaAward,
-    title: "Premium Quality",
-    description:
-      "Every product is produced under strict quality standards to ensure consistency and customer satisfaction.",
-  },
-  {
-    icon: FaFlag,
-    title: "Proudly Malawian",
-    description:
-      "We are committed to producing food products that represent the quality and pride of Malawi.",
-  },
-  {
-    icon: FaHeart,
-    title: "Made for Families",
-    description:
-      "Whether it's breakfast, lunch or dinner, Tiata products are created for everyday enjoyment.",
-  },
+const coreValues = [
+  "Customer focused culture",
+  "Just-in-time delivery",
+  "Highly motivated, well-trained staff",
+  "Team work",
+  "Continuous improvement of goods and services",
+  "Uncompromised discipline",
+  "Equal employment opportunity",
+  "Social responsibility",
 ];
 
 const team = [
+  { name: "Abdul Rasheed A. Amanzie", role: "HR & Administration Manager", qualification: "BBA", image: "/rasheed.jpg" },
+  { name: "Shabban U. Makawila", role: "Procurement Officer", qualification: "CIPS Diploma", image: "/Shabban.jpg" },
+  { name: "Faham Alizi Banda", role: "Marketing & Communications Manager", qualification: "Degree in Communication Studies", image: "/faham.jpg" },
+  { name: "Kumbukani Rasheed", role: "Finance Manager", qualification: "Associate Degree in Marketing & Diploma in Business Management", image: "/kumbukani.jpg" },
+  { name: "Juhudie Makawila", role: "Operations Manager", qualification: "Associate Degree in Marketing & Diploma in Business Management", image: "/juhudie.jpg" },
+  { name: "Shahida Makawila", role: "Secretary", qualification: "Diploma in Business Management", image: "/shahida.jpg" },
+  { name: "Awame Abubakar", role: "Fumigation & Pest Control Officer", qualification: "Diploma in Agriculture, Certificate in Pest Control & Management", image: "/awame.jpg" },
+  { name: "Tionge M. Kaliyopa", role: "Veterinary Technician", qualification: "Diploma in Veterinary Medicine", image: "/tionge.jpg" },
+];
+
+const branches = [
   {
-    name: "John Banda",
-    position: "Managing Director",
-    image: "/team-1.jpg",
-    bio: "Leading Tiata Investment with a vision to deliver quality food products that families across Malawi can trust.",
+    name: "Lilongwe (Head Office)",
+    detail: "Kampala House, adjacent to TNM Shop, along Kamuzu Procession Road",
   },
-  {
-    name: "Kings Kondowe",
-    position: "Finance Manager",
-    image: "/team-2.jpeg",
-    bio: "Oversees production processes and ensures every product meets our quality standards.",
-  },
-  {
-    name: "Martha Majamanda",
-    position: "Accountant",
-    image: "/team-3.jpeg",
-    bio: "Committed to maintaining product safety, consistency and excellence throughout production.",
-  },
-  {
-    name: "Wakissa Kabuzi Munthali",
-    position: "Production & Logistics Manager",
-    image: "/team-4.jpeg",
-    bio: "Connecting Tiata products with customers and building lasting relationships across Malawi.",
-  },
+  { name: "Malangalanga", detail: "Branch office" },
+  { name: "Mitundu", detail: "Branch office" },
 ];
 
 export default function AboutPage() {
@@ -89,285 +49,171 @@ export default function AboutPage() {
       <Navbar />
 
       <main>
+        {/* HEADING */}
         <section className="bg-white py-20 lg:py-28">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-
-            <span className="inline-flex rounded-full bg-primary/10 px-5 py-2 text-sm font-medium text-primary">
-              About Tiata Investment
+          <div className="max-w-6xl mx-auto px-6 text-center max-w-3xl">
+            <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+              About Us
             </span>
 
-            <h1 className="mt-8 text-5xl md:text-6xl font-display font-semibold text-secondary leading-tight">
-              Proudly crafting
-              <span className="block text-accent">
-                quality food products
-              </span>
-              for every Malawian home.
+            <h1 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-secondary">
+              A Trusted Name in Malawian Agriculture
             </h1>
 
-            <p className="mt-8 max-w-3xl mx-auto text-lg leading-relaxed text-secondary/70">
-              Tiata Investment is a proudly Malawian food processing company
-              committed to producing delicious, natural and high-quality products.
-              From refreshing fruit juices to everyday kitchen essentials,
-              we create products families can trust.
+            <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
+              {site.description}
             </p>
-
           </div>
         </section>
 
-        <section className="bg-surface py-24">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-
-            <div className="relative">
-              <div className="relative h-[520px] rounded-[2.5rem] overflow-hidden">
-                <Image
-                  src="/about-story.jpg"
-                  alt="Tiata Investment"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            <div>
-
-              <span className="text-primary uppercase tracking-[0.25em] text-sm font-semibold">
-                Our Story
+        {/* MISSION & VISION */}
+        <section className="bg-surface py-20 lg:py-28">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+            <div className="rounded-3xl bg-white p-10 border border-primary/10">
+              <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                Mission
               </span>
+              <p className="mt-6 text-lg leading-relaxed text-foreground/75">
+                To effectively and efficiently deliver high quality agricultural
+                solutions — including inputs, tools, equipment, veterinary
+                services and pest control — while promoting sustainability and
+                maximizing value for our customers, stakeholders and partners.
+              </p>
+            </div>
 
-              <h2 className="mt-5 text-4xl md:text-5xl font-display font-semibold text-secondary">
-                Made with passion.
-                <span className="block text-accent">
-                  Shared with pride.
-                </span>
+            <div className="rounded-3xl bg-primary p-10 text-white">
+              <span className="inline-flex rounded-full bg-secondary/10 px-4 py-2 text-sm font-medium text-secondaey">
+                Vision
+              </span>
+              <p className="mt-6 text-lg leading-relaxed text-white/85">
+                To become the premier provider of innovative agricultural
+                solutions, delivering exceptional quality, expertise and value
+                to our customers in Malawi and beyond.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CORE VALUES */}
+        <section className="bg-white py-20 lg:py-28">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-2xl">
+              <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                How We Operate
+              </span>
+              <h2 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-secondary leading-tight">
+                Our Core Values
               </h2>
-
-              <p className="mt-8 text-lg text-secondary/70 leading-relaxed">
-                Tiata Investment was founded with a simple vision: to produce
-                quality food products that Malawians can enjoy every day.
-                Every product reflects our commitment to freshness, consistency
-                and exceptional taste.
-              </p>
-
-              <p className="mt-6 text-lg text-secondary/70 leading-relaxed">
-                We continue to grow our product range while maintaining
-                high production standards that deliver value,
-                convenience and confidence to every customer.
-              </p>
-
             </div>
 
+            <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {coreValues.map((v) => (
+                <li
+                  key={v}
+                  className="flex items-start gap-3 rounded-2xl border border-primary/10 p-6"
+                >
+                  <FaCheckCircle className="shrink-0 mt-0.5 text-primary" size={16} />
+                  <span className="text-sm text-foreground/80">{v}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
-        <section className="bg-white py-24">
+        {/* MANAGEMENT TEAM */}
+        <section className="bg-surface py-20 lg:py-28">
           <div className="max-w-6xl mx-auto px-6">
-
-            <div className="grid lg:grid-cols-2 gap-8">
-
-              <div className="rounded-[2rem] border border-secondary/10 p-10">
-
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary text-3xl">
-                  👁
-                </div>
-
-                <h3 className="mt-8 text-3xl font-display font-semibold text-secondary">
-                  Our Vision
-                </h3>
-
-                <p className="mt-5 text-secondary/70 leading-relaxed">
-                  To become one of Malawi's leading manufacturers of
-                  trusted food and beverage products recognised for
-                  quality, innovation and customer satisfaction.
-                </p>
-
-              </div>
-
-              <div className="rounded-[2rem] bg-primary text-white p-10">
-
-                <div className="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center text-3xl">
-                  🎯
-                </div>
-
-                <h3 className="mt-8 text-3xl font-display font-semibold">
-                  Our Mission
-                </h3>
-
-                <p className="mt-5 text-white/80 leading-relaxed">
-                  To manufacture high-quality food products using
-                  carefully selected ingredients while delivering
-                  outstanding value and satisfaction to customers
-                  throughout Malawi.
-                </p>
-
-              </div>
-
+            <div className="max-w-2xl">
+              <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                Our Team
+              </span>
+              <h2 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-secondary leading-tight">
+                Management Team
+              </h2>
+              <p className="mt-5 text-foreground/70 leading-relaxed">
+                A multidisciplinary team spanning business management, animal
+                and plant nutrition, occupational health and safety, and
+                communication and marketing.
+              </p>
             </div>
 
-          </div>
-        </section>
-
-        <section className="bg-surface py-24">
-
-          <div className="max-w-6xl mx-auto px-6">
-
-          <div className="text-center">
-
-          <h2 className="font-display text-5xl font-semibold text-secondary">
-          Our Values
-          </h2>
-
-          <p className="mt-5 text-secondary/70">
-          The principles that guide everything we do.
-          </p>
-
-          </div>
-
-          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          {values.map((value)=>(
-
-          <div
-          key={value.title}
-          className="bg-white rounded-[2rem] p-8 text-center shadow-sm hover:shadow-xl transition"
-          >
-
-          <h3 className="font-display text-2xl font-semibold text-secondary">
-          {value.title}
-          </h3>
-
-          <p className="mt-4 text-secondary/70">
-          {value.desc}
-          </p>
-
-          </div>
-
-          ))}
-
-          </div>
-
-          </div>
-
-          </section>
-
-
-          {/* WHY CHOOSE US */}
-          <section className="bg-primary py-24">
-            <div className="max-w-7xl mx-auto px-6">
-
-              <div className="text-center max-w-3xl mx-auto">
-
-                <span className="inline-flex rounded-full bg-white/15 px-5 py-2 text-sm font-medium text-white">
-                  Why Choose Tiata
-                </span>
-
-                <h2 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-white">
-                  Quality You Can
-                  <span className="block text-accent">
-                    Trust Every Day
-                  </span>
-                </h2>
-
-              </div>
-
-              <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                {features.map((feature) => (
-                  <div
-                    key={feature.title}
-                    className="bg-white rounded-[2rem] p-8 text-center"
-                  >
-
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-
-                      <feature.icon className="text-3xl text-primary" />
-
-                    </div>
-
-                    <h3 className="mt-6 font-display text-2xl text-secondary font-semibold">
-                      {feature.title}
+            <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {team.map((member) => (
+                <div
+                  key={member.name}
+                  className="rounded-2xl bg-white border border-primary/10 overflow-hidden"
+                >
+                  <div className="relative aspect-square w-full bg-primary/5">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display font-semibold text-primary">
+                      {member.name}
                     </h3>
-
-                    <p className="mt-4 text-secondary/70 leading-relaxed">
-                      {feature.description}
+                    <p className="mt-1 text-sm text-accent font-medium">
+                      {member.role}
                     </p>
-
+                    <p className="mt-3 text-xs leading-relaxed text-foreground/60">
+                      {member.qualification}
+                    </p>
                   </div>
-                ))}
-
-              </div>
-
+                </div>
+              ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* ───────────────── TEAM ───────────────── */}
-          <section className="bg-white py-24">
-            <div className="max-w-7xl mx-auto px-6">
-
-              {/* Heading */}
-              <div className="text-center max-w-3xl mx-auto">
-
-                <span className="inline-flex rounded-full bg-primary/10 px-5 py-2 text-sm font-medium text-primary">
-                  Meet Our Team
-                </span>
-
-                <h2 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-secondary">
-                  The People Behind
-                  <span className="block text-accent">
-                    Tiata Investment
-                  </span>
-                </h2>
-
-                <p className="mt-6 text-lg text-secondary/70 leading-relaxed">
-                  Behind every Tiata product is a dedicated team committed to quality,
-                  innovation and delivering food products that customers can trust.
-                </p>
-
-              </div>
-
-              {/* Team Grid */}
-              <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                {team.map((member) => (
-
-                  <div
-                    key={member.name}
-                    className="group rounded-[2rem] overflow-hidden border border-secondary/10 bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-                  >
-
-                    {/* Image */}
-                    <div className="relative h-80 overflow-hidden">
-
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover transition duration-700 group-hover:scale-105"
-                      />
-
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-8">
-
-                      <h3 className="font-display text-2xl font-semibold text-secondary">
-                        {member.name}
-                      </h3>
-
-                      <p className="mt-2 text-primary font-semibold">
-                        {member.position}
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                ))}
-
-              </div>
-
+        {/* BRANCHES */}
+        <section className="bg-white py-20 lg:py-28">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-2xl">
+              <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                Where We Are
+              </span>
+              <h2 className="mt-6 text-4xl md:text-5xl font-display font-semibold text-secondary leading-tight">
+                Our Branches
+              </h2>
             </div>
-          </section>
 
+            <div className="mt-12 grid sm:grid-cols-3 gap-6">
+              {branches.map((b) => (
+                <div
+                  key={b.name}
+                  className="rounded-2xl border border-primary/30 p-7"
+                >
+                  <FaMapMarkerAlt className="text-primary" size={18} />
+                  <p className="mt-4 font-display font-semibold text-secondary">
+                    {b.name}
+                  </p>
+                  <p className="mt-2 text-sm text-foreground/60 leading-relaxed">
+                    {b.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-primary py-16 text-center text-white">
+          <div className="max-w-2xl mx-auto px-6">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold">
+              Want to work with us?
+            </h2>
+            <p className="mt-3 text-white/75">
+              Get in touch for pricing, availability, or to book a service.
+            </p>
+            <QuoteButton className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent text-secondary px-8 py-4 text-sm font-semibold hover:opacity-90 transition">
+              Request a Quote
+              <span aria-hidden>→</span>
+            </QuoteButton>
+          </div>
+        </section>
       </main>
 
       <Footer />
