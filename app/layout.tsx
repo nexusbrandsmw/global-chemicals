@@ -3,6 +3,7 @@ import { theme, getGoogleFontsUrl } from "@/data/theme";
 import { site } from "@/data/site";
 import QuoteModalProvider from "@/components/QuoteModalProvider";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.website),
