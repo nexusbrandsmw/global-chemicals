@@ -12,7 +12,7 @@ export const site = {
   slogan:
     "Sellers and suppliers of quality agricultural products, tools, equipment, pest control, veterinary services and drugs.",
   description:
-    "Global Chemicals supplies agricultural inputs, tools and equipment, and provides fumigation, pest control and veterinary services to farms, institutions and businesses across Malawi.",
+    "Global Chemicals is a company owned by indigenous Malawians that deals in the selling, provision and supplying of agricultural supplies such as seeds, fertilizers, chemicals,  herbicides, tools & equipment, veterinary drugs, pest control and fumigation services",
 
   // Branding
   logo: "/logo.png",

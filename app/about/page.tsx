@@ -24,14 +24,16 @@ const coreValues = [
 ];
 
 const team = [
-  { name: "Abdul Rasheed A. Amanzie", role: "HR & Administration Manager", qualification: "BBA", image: "/rasheed.jpg" },
-  { name: "Shabban U. Makawila", role: "Procurement Officer", qualification: "CIPS Diploma", image: "/Shabban.jpg" },
-  { name: "Faham Alizi Banda", role: "Marketing & Communications Manager", qualification: "Degree in Communication Studies", image: "/faham.jpg" },
+  { name: "Shabban U. Makawila", role: "Managing Director (HR and Admin.)", qualification: "CIPS Diploma", image: "/Shabban.jpg" },
+  { name: "Abdul Rasheed A. Amanzie", role: "Co-Managing Director (Procurement and supplying chain management)", qualification: "BBA", image: "/rasheed.jpg" },
+  { name: "Faham Alizi Banda", role: "Communications and Corporate Affairs Manager", qualification: "Degree in Communication Studies", image: "/Faham.jpeg" },
+  { name: "Abdullah Kaisi", role: "Marketing Manager", qualification: "CIPS Diploma", image: "/Abdullah.jpeg" },
   { name: "Kumbukani Rasheed", role: "Finance Manager", qualification: "Associate Degree in Marketing & Diploma in Business Management", image: "/kumbukani.jpg" },
   { name: "Juhudie Makawila", role: "Operations Manager", qualification: "Associate Degree in Marketing & Diploma in Business Management", image: "/juhudie.jpg" },
   { name: "Shahida Makawila", role: "Secretary", qualification: "Diploma in Business Management", image: "/shahida.jpg" },
-  { name: "Awame Abubakar", role: "Fumigation & Pest Control Officer", qualification: "Diploma in Agriculture, Certificate in Pest Control & Management", image: "/awame.jpg" },
-  { name: "Tionge M. Kaliyopa", role: "Veterinary Technician", qualification: "Diploma in Veterinary Medicine", image: "/tionge.jpg" },
+  { name: "Awame Abubakar", role: "Fumigation & Pest Control Officer", qualification: "Diploma in Agriculture, Certificate in Pest Control & Management", image: "/Awame.jpeg" },
+  { name: "Tionge M. Kaliyopa", role: "Veterinary Technician", qualification: "Diploma in Veterinary Medicine", image: "/tionge.jpeg" },
+  { name: "Nema Kamala", role: "Mitundu Branch", qualification: "Diploma in Veterinary Medicine", image: "/Nema.jpeg" },
 ];
 
 const branches = [
@@ -61,7 +63,9 @@ export default function AboutPage() {
             </h1>
 
             <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
-              {site.description}
+              A trusted name in Malawian agricultural industry/sector that provides, sells and supplies seeds, 
+              fertilizers, chemicals, herbicides tools & equipment, veterinary drugs and services, pest control 
+              & fumigation services and occupational health services
             </p>
           </div>
         </section>
@@ -75,8 +79,8 @@ export default function AboutPage() {
               </span>
               <p className="mt-6 text-lg leading-relaxed text-foreground/75">
                 To effectively and efficiently deliver high quality agricultural
-                solutions — including inputs, tools, equipment, veterinary
-                services and pest control — while promoting sustainability and
+                solutions including inputs, tools, equipment, veterinary
+                services and pest control while promoting sustainability and
                 maximizing value for our customers, stakeholders and partners.
               </p>
             </div>
@@ -157,9 +161,6 @@ export default function AboutPage() {
                     </h3>
                     <p className="mt-1 text-sm text-accent font-medium">
                       {member.role}
-                    </p>
-                    <p className="mt-3 text-xs leading-relaxed text-foreground/60">
-                      {member.qualification}
                     </p>
                   </div>
                 </div>
