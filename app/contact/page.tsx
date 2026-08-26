@@ -65,11 +65,11 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-10 grid sm:grid-cols-3 gap-4">
+              <div className="mt-10 grid sm:grid-cols-1 gap-4">
                 {branches.map((b) => (
                   <div
                     key={b.name}
-                    className="rounded-2xl p-5 border border-primary/60"
+                    className="rounded-3xl p-5 border border-primary/60"
                   >
                     <p className="font-display font-semibold  text-secondary">
                       {b.name}

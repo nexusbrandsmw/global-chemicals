@@ -73,8 +73,8 @@ export const catalog = [
     ],
   },
   {
-    name: "Veterinary Products",
-    slug: "veterinary-products",
+    name: "Veterinary Drugs",
+    slug: "veterinary-drugs",
     image: "/veterinary.jpg",
     description:
       "Antibiotics, vaccines, dewormers and equipment for livestock and poultry health.",
@@ -192,6 +192,7 @@ export const suppliers = [
   { name: "Bayer Malawi", logo: "/logos/bayer.svg" },
   { name: "Farmers Organization", logo: "/logos/farmers-org.jpg" },
   { name: "Osho Chemicals", logo: "/logos/osho.webp" },
+  { name: "Easi Seeds", logo: "/logos/easiseeds.png" },
 ];
 
 import { FaShieldAlt, FaTruck, FaUsers, FaCertificate } from "react-icons/fa";
