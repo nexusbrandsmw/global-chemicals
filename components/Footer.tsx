@@ -83,6 +83,12 @@ export default function Footer() {
                 <li key={p} className="text-white/80">{p}</li>
               ))}
             </ul>
+            <ul className="text-white/80 mt-3">
+              Herbicides
+            </ul>
+            <ul className="text-white/80 mt-3">
+              Pesticides
+            </ul>
           </div>
 
           {/* CONTACT */}
