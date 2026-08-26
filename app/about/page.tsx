@@ -24,8 +24,8 @@ const coreValues = [
 ];
 
 const team = [
-  { name: "Shabban U. Makawila", role: "Managing Director (HR and Admin.)", qualification: "CIPS Diploma", image: "/Shabban.jpg" },
-  { name: "Abdul Rasheed A. Amanzie", role: "Co-Managing Director (Procurement and supplying chain management)", qualification: "BBA", image: "/rasheed.jpg" },
+  { name: "Shabban U. Makawila", role: "Co-Managing Director (Procurement and supplying chain management)", qualification: "CIPS Diploma", image: "/Shabban.jpg" },
+  { name: "Abdul Rasheed A. Amanzie", role: "Managing Director (HR and Admin.)", qualification: "BBA", image: "/rasheed.jpg" },
   { name: "Faham Alizi Banda", role: "Communications and Corporate Affairs Manager", qualification: "Degree in Communication Studies", image: "/FahamBanda.jpeg" },
   { name: "Abdullah Kaisi", role: "Marketing Manager", qualification: "CIPS Diploma", image: "/Abdullah.jpeg" },
   { name: "Kumbukani Rasheed", role: "Finance Manager", qualification: "Associate Degree in Marketing & Diploma in Business Management", image: "/kumbukani.jpg" },
