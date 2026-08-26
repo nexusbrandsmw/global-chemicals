@@ -26,13 +26,13 @@ const coreValues = [
 const team = [
   { name: "Shabban U. Makawila", role: "Managing Director (HR and Admin.)", qualification: "CIPS Diploma", image: "/Shabban.jpg" },
   { name: "Abdul Rasheed A. Amanzie", role: "Co-Managing Director (Procurement and supplying chain management)", qualification: "BBA", image: "/rasheed.jpg" },
-  { name: "Faham Alizi Banda", role: "Communications and Corporate Affairs Manager", qualification: "Degree in Communication Studies", image: "/Faham.jpeg" },
+  { name: "Faham Alizi Banda", role: "Communications and Corporate Affairs Manager", qualification: "Degree in Communication Studies", image: "/FahamBanda.jpeg" },
   { name: "Abdullah Kaisi", role: "Marketing Manager", qualification: "CIPS Diploma", image: "/Abdullah.jpeg" },
   { name: "Kumbukani Rasheed", role: "Finance Manager", qualification: "Associate Degree in Marketing & Diploma in Business Management", image: "/kumbukani.jpg" },
   { name: "Juhudie Makawila", role: "Operations Manager", qualification: "Associate Degree in Marketing & Diploma in Business Management", image: "/juhudie.jpg" },
   { name: "Shahida Makawila", role: "Secretary", qualification: "Diploma in Business Management", image: "/shahida.jpg" },
   { name: "Awame Abubakar", role: "Fumigation & Pest Control Officer", qualification: "Diploma in Agriculture, Certificate in Pest Control & Management", image: "/Awame.jpeg" },
-  { name: "Tionge M. Kaliyopa", role: "Veterinary Technician", qualification: "Diploma in Veterinary Medicine", image: "/tionge.jpeg" },
+  { name: "Tionge M. Kaliyopa", role: "Veterinary Technician", qualification: "Diploma in Veterinary Medicine", image: "/TiongeKaliyopa.jpeg" },
   { name: "Nema Kamala", role: "Mitundu Branch", qualification: "Diploma in Veterinary Medicine", image: "/Nema.jpeg" },
 ];
 
